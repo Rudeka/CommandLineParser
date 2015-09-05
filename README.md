@@ -1,5 +1,7 @@
 Command line parser
 
+Kottans test task #1
+
 To run this program: 
 - clone its source code to your prefered local derictory
 - build the program locally
