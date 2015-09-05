@@ -83,8 +83,7 @@ namespace CommandParser
                         break;
 
                     case print:
-                        int printValue = loopNumber + 1;
-                        for (var i = printValue; i < input.Length; i++)
+                        for (var i = loopNumber+1; i < input.Length; i++)
                         {
                             if (!supportedCommands.Contains(input[i]))
                             {
