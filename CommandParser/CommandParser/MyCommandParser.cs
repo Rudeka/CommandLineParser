@@ -20,7 +20,7 @@ namespace CommandParser
         private const string print = "-print";
         private List<string> supportedCommands = new List<string> { helpA, helpB, helpC, keyValue, ping, print };
         private Dictionary<string, string> kCommand = new Dictionary<string, string>();
-        private int loopNumber = 0;
+        private int loopNumber;
         private string kValue;
         private string kKey;
 
@@ -40,7 +40,7 @@ namespace CommandParser
 
                     case ping:
                         Console.WriteLine("Pinging...");
-                        Console.Beep(2000, 1000);
+                        Console.Beep();
                         loopNumber++;
                         break;
 
