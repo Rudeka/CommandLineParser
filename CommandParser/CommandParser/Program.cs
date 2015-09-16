@@ -36,9 +36,7 @@ prints all text after command
                 Console.WriteLine(e.Message);
             }
 
-            Console.ReadLine();
             
         }
-
     }
 }

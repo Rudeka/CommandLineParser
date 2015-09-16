@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 
 
 namespace CommandParser
@@ -76,6 +77,14 @@ prints all text after command
         }
     }
 
+    public class ExitCommand : ICommand
+    {
+        public void Execute(string[] param)
+        {
+            Environment.Exit(0);
+        }
+    }
+
     public static class ArgumentsForCommands
     {
         public static string[] argumentsForCommands(string[] param,
@@ -112,6 +121,7 @@ prints all text after command
             Commands.Add("-help", new HelpCommand());
             Commands.Add("/help", new HelpCommand());
             Commands.Add("/?", new HelpCommand());
+            Commands.Add("-exit", new ExitCommand());
         }
 
         public void Run()
@@ -125,7 +135,17 @@ prints all text after command
                         argumentsForCommands(input, Commands, i));
                 }
             }
+            AddParams();
+        }
 
+        public void AddParams()
+        {
+            string newLine = Console.ReadLine();
+            if (!String.IsNullOrEmpty(newLine))
+            {
+                input = newLine.Split(new char[] {' '});
+                Run();
+            }
         }
     }
 }
