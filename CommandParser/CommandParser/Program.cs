@@ -27,13 +27,16 @@ prints all text after command
                 {
                     var commandParser = new MyCommandParser(args);
                     commandParser.Run();
+
                 }
             }
             catch (Exception e)
             {
                 
                 Console.WriteLine(e.Message);
-            }  
+            }
+
+            Console.ReadLine();
             
         }
 
